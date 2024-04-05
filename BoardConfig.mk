@@ -124,7 +124,7 @@ TARGET_USES_UEFI := true
 BOARD_VNDK_VERSION := current
 
 # Security patch level
-TW_USE_FSCRYPT_POLICY := 2
+TW_USE_FSCRYPT_POLICY := 1
 PLATFORM_VERSION := 14
 PLATFORM_VERSION_LAST_STABLE := $(PLATFORM_VERSION)
 PLATFORM_SECURITY_PATCH := 2099-12-31
@@ -157,7 +157,16 @@ TW_INCLUDE_RESETPROP := true
 RECOVERY_SDCARD_ON_DATA := true
 
 # Usb
+# Removes the loop block errors after flashing ZIPs (Workaround) 
+TW_IGNORE_LOGICAL_MOUNT_ERRORS := true
+TW_LOOP_DEVICE_ERRORS_TO_LOG := true
+
+# USB Configuration
 TW_EXCLUDE_DEFAULT_USB_INIT := true
+
+# This device does not support fastboot boot, do *NOT* remove!
+TW_NO_FASTBOOT_BOOT := true
+TW_INCLUDE_FASTBOOTD := true
 
 # System as root
 BOARD_SUPPRESS_SECURE_ERASE := true
@@ -168,7 +177,6 @@ TW_SKIP_COMPATIBILITY_CHECK := true
 # Selinux
 BOARD_SEPOLICY_VERS := 29.0.3
 SEPOLICY_IGNORE_NEVERALLOWS := true
-SELINUX_IGNORE_NEVERALLOWS := true
 
 # Log
 TWRP_INCLUDE_LOGCAT := true
