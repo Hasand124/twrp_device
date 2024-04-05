@@ -86,6 +86,9 @@ TARGET_USERIMAGES_USE_F2FS := true
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
 
+# Recovery
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
+
 # Hack: prevent anti rollback
 PLATFORM_SECURITY_PATCH := 2099-12-31
 VENDOR_SECURITY_PATCH := 2099-12-31
@@ -135,6 +138,3 @@ SELINUX_IGNORE_NEVERALLOWS := true
 # Log
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true 
-
-# Recovery
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
