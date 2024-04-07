@@ -21,9 +21,6 @@ LOCAL_PATH := device/xiaomi/merlin
 # Include GSI keys
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
-# Dynamic Partitions
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
-
 # VNDK
 PRODUCT_TARGET_VNDK_VERSION := 32
 
