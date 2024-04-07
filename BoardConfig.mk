@@ -131,6 +131,11 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 
+# Brightness
+TW_DEFAULT_BRIGHTNESS := 800
+TW_MAX_BRIGHTNESS := 2047
+TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
+
 # Statusbar Custom Position
 TW_STATUS_ICONS_ALIGN := center
 TW_CUSTOM_CPU_POS := "300"
